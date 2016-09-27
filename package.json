@@ -20,6 +20,9 @@
     "shelljs-nodecli": "^0.1.1",
     "tempfile": "^1.1.1"
   },
+  "devDependencies": {
+    "eslint": "3.6.1"
+  },
   "homepage": "https://github.com/mozilla/shield-study-cli#readme",
   "keywords": [
     "addon",
@@ -35,6 +38,7 @@
     "url": "git+https://github.com/mozilla/shield-study-cli.git"
   },
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
