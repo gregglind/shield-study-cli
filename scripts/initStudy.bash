@@ -3,7 +3,7 @@ set -o nounset
 set -o errexit
 
 ADDON=$1
-URL=https://github.com/gregglind/shield-studies-addon-template
+URL=https://github.com/mozilla/shield-studies-addon-template
 
 git clone --depth 1  $URL "$1"
 cd "$1";
