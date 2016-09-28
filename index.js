@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/*eslint no-console: 0 */
+
 var chalk = require('chalk');
 var program = require('commander');
 var merge = require('merge');
@@ -108,7 +110,7 @@ program
       _userPrefs = jsonfile.readFileSync(options.prefs);
     }
     // reformat if needful:
-    userPrefs = {};
+    var userPrefs = {};
     Object.keys(_userPrefs).forEach(function (k) {
       var v = _userPrefs[k];
       var prefix = '+';
@@ -121,7 +123,7 @@ program
 
     console.info('--prefs: \n%s', JSON.stringify(userPrefs,null, 2));
     // set special addon prefs
-    ourPrefs = {};
+    var ourPrefs = {};
     if (variation) {
       ourPrefs[prefsBr + '.shield.variation'] = variation;
       console.info('setting variation to: %s', f.bold(variation));
