@@ -21,7 +21,9 @@
     "tempfile": "^1.1.1"
   },
   "devDependencies": {
-    "eslint": "3.6.1"
+    "depcheck": "^0.6.4",
+    "eslint": "^3.5.0",
+    "fixpack": "^2.3.1"
   },
   "homepage": "https://github.com/mozilla/shield-study-cli#readme",
   "keywords": [
@@ -38,7 +40,7 @@
     "url": "git+https://github.com/mozilla/shield-study-cli.git"
   },
   "scripts": {
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm shrinkwrap",
+    "test": "eslint . && depcheck --ignores eslint && fixpack && echo OK"
   }
 }
