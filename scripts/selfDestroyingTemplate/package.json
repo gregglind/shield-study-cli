@@ -1,0 +1,16 @@
+{
+  "title": "Self Uninstalling Version",
+  "name": "selfdestroyingtemplate",
+  "version": "0.0.1",
+  "description": "Self Uninstalling Version",
+  "main": "index.js",
+  "author": "shield-cli",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ],
+}
