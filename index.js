@@ -2,6 +2,8 @@
 
 /*eslint no-console: 0 */
 
+// this package is shield-study-cli
+
 var chalk = require('chalk');
 var program = require('commander');
 var merge = require('merge');
@@ -151,8 +153,7 @@ program
         f.link(file),
         JSON.stringify(newPrefs,null,2));
 
-    //console.info("jpm", "run", "code:", addonDir, "variation:", variation, "--prefs", options.prefs, passedOn);
-    var callArgs = ['jpm', 'run', '--addon-dir', addonDir, '--prefs', file].concat(passedOn);
+    var callArgs = ['node', 'node_modules/jpm/bin/jpm', 'run', '--addon-dir', addonDir, '--prefs', file].concat(passedOn);
     console.info('jpm args:\n%s', util.inspect(callArgs) );
     nodeCLI.exec.apply(nodeCLI, callArgs);
     process.exit(0);
