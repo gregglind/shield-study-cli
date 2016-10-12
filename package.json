@@ -1,7 +1,7 @@
 {
   "name": "shield-study-cli",
   "description": "CLI for Shield Study Mozilla Addons",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Gregg Lind <glind@mozilla.com>",
   "bin": {
     "shield": "./index.js"

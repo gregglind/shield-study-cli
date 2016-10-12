@@ -1,4 +1,4 @@
-set -x
+
 set -o nounset
 set -o errexit
 
@@ -6,17 +6,26 @@ ADDON=$1
 URL=https://github.com/mozilla/shield-studies-addon-template
 
 git clone --depth 1  $URL "$1"
+
+set +x
 cd "$1";
 rm -rf .git
-git init
+git init >> /dev/null
 git add .
-git commit -m "Initial commit, from shield-studies-addon-template"
+git commit -m "Initial commit, from shield-studies-addon-template" >> /dev/null
 
-echo >> /dev/null "
-Created at: '$1'
 
-Now
+echo "
+# Success: Shield Study created
+- from:  mozilla/shield-studies-addon-template
+- to:    '$1'
+
+## Next Steps
+
 - cd '$1'
-- setup git stuff for your branch
-- get to work!
-" >> /dev/null
+- edit .git/config
+
+## How To Shield Study
+
+  https://github.com/mozilla/shield-studies-addon-utils/blob/master/howToShieldStudy.md
+"
