@@ -1,7 +1,7 @@
 {
   "name": "shield-study-cli",
   "description": "CLI for Shield Study Mozilla Addons",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "Gregg Lind <glind@mozilla.com>",
   "bin": {
     "shield": "./index.js"
@@ -23,7 +23,8 @@
   "devDependencies": {
     "depcheck": "^0.6.4",
     "eslint": "^3.6.1",
-    "fixpack": "^2.3.1"
+    "fixpack": "^2.3.1",
+    "npm-run-all": "^3.1.0"
   },
   "homepage": "https://github.com/mozilla/shield-study-cli#readme",
   "keywords": [
@@ -40,8 +41,11 @@
     "url": "git+https://github.com/mozilla/shield-study-cli.git"
   },
   "scripts": {
+    "lint": "npm-run-all lint:*",
+    "lint:depcheck": "depcheck --ignores eslint",
+    "lint:eslint": "eslint .",
+    "lint:fixpack": "fixpack",
     "prepublish": "npm shrinkwrap",
-    "test": "eslint . && depcheck --ignores eslint && fixpack && echo OK",
-    "lint": "eslint ."
+    "test": "npm run lint && echo OK"
   }
 }
