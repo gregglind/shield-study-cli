@@ -6,7 +6,6 @@
 npm install -g shield-studies-cii
 ```
 
-
 ## Usage:
 
 ```
@@ -27,6 +26,10 @@ $ shield -h
     -h, --help     output usage information
     -V, --version  output the version number
 ```
+
+### Shield Studies Tutorial
+
+[How To Shield Study](https://github.com/mozilla/shield-studies-addon-utils/blob/master/howToShieldStudy.md)
 
 ## Subcommand examples:
 
