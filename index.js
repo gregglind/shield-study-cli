@@ -189,7 +189,8 @@ program
   .command('init <name>')
   .option('-f --force', 'remove dir if exists')
   .action(function (name, options) {
-    // yes, this is not as robust as shell!  Sorry!
+    name = name.startsWith('shield-study-') ? name : 'shield-study-' + name;
+
     if (options.force) {
       nodeCLI.exec('rm', '-rf', name);
     }
