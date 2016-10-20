@@ -58,7 +58,7 @@ function makeProfile(dir) {
     destinationDirectory: dir
   });
 
-    // Set default preferences
+  // Set default preferences
   var prefs = getPrefs('firefox');
   Object.keys(prefs).forEach(function(pref) {
     profile.setPreference(pref, prefs[pref]);

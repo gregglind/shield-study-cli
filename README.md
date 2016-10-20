@@ -2,13 +2,13 @@
 
 ## install
 
-```
-npm install -g shield-studies-cii
+```sh
+$ npm install -g shield-study-cli
 ```
 
 ## Usage:
 
-```
+```sh
 $ shield -h
 
   Usage: shield [options] [command]
@@ -36,23 +36,23 @@ $ shield -h
 ### run
 
 Run with a branch at random
-```
+```sh
 $ shield run ~/aStudyAddon/ some-branch-name --prefs some.prefs.json  --  -v  -b Aurora
 ```
 
 Choose a branch, add some prefs
-```
+```sh
 $ shield run ~/aStudyAddon/ some-branch-name
 ```
 
 Add a firstrun time, and some extra prefs
 
-```
+```sh
 $ shield run ~/aStudyAddon/ some-branch-name --firstrun 123214232 --prefs some.prefs.json  --  -v  -b Aurora
 ```
 
 Add some arguments to passed to jpm.
-```
+```sh
 $ shield run ~/aStudyAddon/ some-branch-name --prefs some.prefs.json  --  -v  -b Aurora
 ```
 
@@ -62,7 +62,7 @@ $ shield run ~/aStudyAddon/ some-branch-name --prefs some.prefs.json  --  -v  -b
 - all other prefs are passed through
 - prefs can be called more than once
 
-```
+```json
 {
   "+some.addon.pref": "abcded",
   "browser.pref":  4
@@ -72,17 +72,17 @@ $ shield run ~/aStudyAddon/ some-branch-name --prefs some.prefs.json  --  -v  -b
 ### profile
 
 Make a new blank-ish profile, with some useful prefs.
-```
+```sh
 $ shield profile some/path
 ```
 
 Overwrite if needful.
-```
+```sh
 $ shield profile --force some/path
 ```
 
 Add some prefs
-```
+```sh
 $ shield profile --prefs some.prefs  --prefs some.prefs
 ```
 
@@ -91,7 +91,7 @@ These are useful base profiles for debugging runs, qa, `jpm`, etc.
 
 ### init
 
-```
+```sh
 $ shield init -h
 
   Usage: init [options] <name>
@@ -104,7 +104,9 @@ $ shield init -h
 
 Clone out the template, overrwriting if needful.
 
-```$ shield init my-feature-study-addon --force```
+```sh
+$ shield init my-feature-study-addon --force
+```
 
 ### lint
 
