@@ -13,6 +13,8 @@ var tempfile = require('tempfile');
 var util = require('util');
 var clim = require('clim');
 
+const JPMPATH=path.join(__dirname, 'node_modules/jpm/bin/jpm');
+
 clim.logWrite = function (level, prefixes, msg) {
   var pfx = '';
   if (prefixes.length > 0) pfx = prefixes.join(' ');
@@ -153,7 +155,7 @@ program
         f.link(file),
         JSON.stringify(newPrefs,null,2));
 
-    var callArgs = ['node', 'node_modules/jpm/bin/jpm', 'run', '--addon-dir', addonDir, '--prefs', file].concat(passedOn);
+    var callArgs = ['node', JPMPATH, 'run', '--addon-dir', addonDir, '--prefs', file].concat(passedOn);
     console.info('jpm args:\n%s', util.inspect(callArgs) );
     nodeCLI.exec.apply(nodeCLI, callArgs);
     process.exit(0);
@@ -208,6 +210,12 @@ program
     process.exit(0);
   });
 
+program
+  .command('help')
+  .action(function (env) {
+    program.help();
+    process.exit(0);
+  })
 
 program
   .command('*')
